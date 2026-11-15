@@ -1,0 +1,26 @@
+
+name: Integracion Continua EPS SURA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar-proyecto:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos del proyecto
+        run: |
+          echo "Iniciando integracion continua EPS SURA"
+          ls -la
+          test -d EPSSURABACK
+          test -d EPSSURAFRONT
+          test -d javascript_project
+          test -d python_project
+          echo "Estructura del proyecto verificada"
