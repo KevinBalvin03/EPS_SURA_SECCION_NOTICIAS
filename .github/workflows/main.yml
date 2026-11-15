@@ -1,5 +1,5 @@
 
-name: Integracion Continua EPS SURA
+name: CI CD EPS SURA
 
 on:
   push:
@@ -8,19 +8,44 @@ on:
     branches: [main]
 
 jobs:
-  verificar-proyecto:
+  pruebas-python:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Descargar repositorio
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Verificar archivos del proyecto
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ejecutar pruebas Python
         run: |
-          echo "Iniciando integracion continua EPS SURA"
-          ls -la
-          test -d EPSSURABACK
-          test -d EPSSURAFRONT
-          test -d javascript_project
-          test -d python_project
-          echo "Estructura del proyecto verificada"
+          python -m unittest discover \
+            -s python_project/tests \
+            -p "test*.py" -v
+
+  pruebas-javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Ejecutar pruebas JavaScript
+        run: node --test javascript_project/tests/*.test.js
+
+  deploy:
+    needs: [pruebas-python, pruebas-javascript]
+    if: github.event_name == 'push'
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Desplegar en Apache
+        run: |
+          echo "Pruebas aprobadas"
+          echo "Preparando despliegue"
+          # Pendiente: copiar el build a /var/www/html/
