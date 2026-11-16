@@ -26,4 +26,4 @@ export function contarPorCategoria(noticias) {
     conteo[n.categoria] = (conteo[n.categoria] ?? 0) + 1;
   }
   return conteo;
-}
+} // Fix
