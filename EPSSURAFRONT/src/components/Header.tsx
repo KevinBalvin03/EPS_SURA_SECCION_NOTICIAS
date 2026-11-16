@@ -4,7 +4,6 @@ import epsSuraLogo from '@/assets/logo-eps-sura.png'
 export default function Header() {
   return (
     <>
-      {/* TOP BAR */}
       <div style={{ background: '#3d3d3d' }} className="text-white text-xs py-2">
         <div className="max-w-screen-xl mx-auto px-6 flex justify-end items-center gap-5">
           <button className="flex items-center gap-1.5 hover:text-gray-300 transition-colors uppercase tracking-widest text-[10px] font-medium">
@@ -20,22 +19,18 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MAIN HEADER */}
       <header className="bg-white shadow-sm">
         <div className="max-w-screen-xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
-          {/* Logo */}
           <div className="shrink-0">
             <Link to="/"><img src={epsSuraLogo} alt="EPS Sura" className="h-8 w-auto object-contain" /></Link>
           </div>
 
-          {/* Utility nav */}
           <nav className="hidden lg:flex items-center gap-3 text-[11px] text-gray-600 min-w-0">
             {['Ley de transparencia', 'Preguntas frecuentes', 'Escríbenos tus PQRS', 'Canales de contacto', 'Solicitar clave'].map(link => (
               <a key={link} href="#" className="hover:text-gray-900 transition-colors whitespace-nowrap">{link}</a>
             ))}
           </nav>
 
-          {/* CTA */}
           <div className="flex items-center gap-2 shrink-0">
             <button className="bg-gray-900 text-white text-[11px] px-4 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-gray-700 transition-colors font-semibold tracking-wide whitespace-nowrap">
               INICIAR SESIÓN <span className="text-[9px]">▼</span>
@@ -49,7 +44,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* RAINBOW BAR */}
       <div className="h-[3px] flex">
         {['#f97316','#fb923c','#fbbf24','#a3e635','#22c55e','#14b8a6','#3b82f6','#6366f1','#8b5cf6'].map(c => (
           <div key={c} className="flex-1" style={{ background: c }} />

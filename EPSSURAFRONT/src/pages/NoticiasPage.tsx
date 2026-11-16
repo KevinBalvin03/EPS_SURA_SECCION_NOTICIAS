@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 const API_URL = 'http://localhost:8080/api/noticias/todas'
-// Cada cuanto se vuelve a consultar el back, para que los cambios hechos por Postman se vean solos.
 const INTERVALO_MS = 5000
 
 type Categoria = {

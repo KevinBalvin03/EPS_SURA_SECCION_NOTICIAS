@@ -1,8 +1,3 @@
--- Base de datos EPS SURA para MySQL / MariaDB (XAMPP).
--- Las tablas y columnas son las mismas que generan las entidades JPA del back
--- (Usuario, Categoria, Noticia y la tabla intermedia noticia_categoria).
--- Se puede ejecutar mas de una vez: no borra nada ni duplica los datos de ejemplo.
-
 CREATE DATABASE IF NOT EXISTS epssura
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
@@ -10,10 +5,6 @@ CREATE DATABASE IF NOT EXISTS epssura
 USE epssura;
 
 SET NAMES utf8mb4;
-
--- ---------------------------------------------------------------------------
--- Tablas
--- ---------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS usuario (
   id      BIGINT       NOT NULL AUTO_INCREMENT,
@@ -56,10 +47,6 @@ CREATE TABLE IF NOT EXISTS noticia_categoria (
   CONSTRAINT fk_noticia_categoria_noticia   FOREIGN KEY (noticia_id)   REFERENCES noticia (id),
   CONSTRAINT fk_noticia_categoria_categoria FOREIGN KEY (categoria_id) REFERENCES categoria (id)
 ) ENGINE = InnoDB;
-
--- ---------------------------------------------------------------------------
--- Datos de ejemplo (los mismos de src/main/resources/data.sql)
--- ---------------------------------------------------------------------------
 
 INSERT IGNORE INTO usuario (id, nombre, correo, rol) VALUES
   (1, 'Administrador EPS SURA', 'admin@epssura.com', 'ADMIN'),

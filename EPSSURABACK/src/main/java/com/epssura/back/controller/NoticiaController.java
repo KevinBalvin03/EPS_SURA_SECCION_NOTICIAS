@@ -32,7 +32,6 @@ public class NoticiaController {
         this.noticiaService = noticiaService;
     }
 
-    // GET /api/noticias?categoriaId=1&q=sede
     @GetMapping
     public List<Noticia> listar(@RequestParam(required = false) Long categoriaId,
                                 @RequestParam(required = false) String q) {

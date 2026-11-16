@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-// Datos que envia el cliente para crear o editar una noticia.
 public record NoticiaRequest(
         @NotBlank @Size(max = 200) String titulo,
         @Size(max = 500) String resumen,

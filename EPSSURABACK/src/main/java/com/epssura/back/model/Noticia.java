@@ -50,7 +50,6 @@ public class Noticia {
     @Column(nullable = false, updatable = false)
     private LocalDateTime fechaCreacion;
 
-    // Nula mientras la noticia sea un borrador.
     private LocalDateTime fechaPublicacion;
 
     @ManyToOne(optional = false)
