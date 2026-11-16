@@ -1,8 +1,12 @@
+MAX_TITULO = 200
+MAX_RESUMEN = 500
+
+
 def validar_noticia(titulo, resumen):
-    if titulo is None or titulo.strip() == '':
+    if not titulo or not titulo.strip():
         raise ValueError('El título es obligatorio')
-    if len(titulo) > 200:
-        raise ValueError('El título supera los 200 caracteres')
-    if resumen is not None and len(resumen) > 500:
-        raise ValueError('El resumen supera los 500 caracteres')
+    if len(titulo) > MAX_TITULO:
+        raise ValueError(f'El título supera los {MAX_TITULO} caracteres')
+    if resumen and len(resumen) > MAX_RESUMEN:
+        raise ValueError(f'El resumen supera los {MAX_RESUMEN} caracteres')
     return True
