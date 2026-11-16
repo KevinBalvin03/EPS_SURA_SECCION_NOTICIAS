@@ -37,6 +37,26 @@ class TestPublicarNoticia(unittest.TestCase):
         borrador = {'titulo': 'Nueva sede', 'estado': 'BORRADOR', 'fecha_publicacion': None}
         noticias.publicar_noticia(borrador, '2026-11-15')
         self.assertEqual(borrador['estado'], 'BORRADOR')
-        
+
+class TestFiltrarPublicadas(unittest.TestCase):
+
+    NOTICIAS = [
+        {'id': 1, 'estado': 'PUBLICADA', 'fecha_publicacion': '2026-10-05'},
+        {'id': 2, 'estado': 'BORRADOR', 'fecha_publicacion': None},
+        {'id': 3, 'estado': 'PUBLICADA', 'fecha_publicacion': '2026-11-01'},
+        {'id': 4, 'estado': 'ARCHIVADA', 'fecha_publicacion': '2026-09-20'},
+    ]
+
+    def test_solo_devuelve_las_noticias_publicadas(self):
+        ids = [n['id'] for n in noticias.filtrar_publicadas(self.NOTICIAS)]
+        self.assertEqual(sorted(ids), [1, 3])
+
+    def test_las_ordena_de_la_mas_reciente_a_la_mas_antigua(self):
+        ids = [n['id'] for n in noticias.filtrar_publicadas(self.NOTICIAS)]
+        self.assertEqual(ids, [3, 1])
+
+    def test_lista_vacia_devuelve_lista_vacia(self):
+        self.assertEqual(noticias.filtrar_publicadas([]), [])
+
 if __name__ == '__main__':
     unittest.main()
