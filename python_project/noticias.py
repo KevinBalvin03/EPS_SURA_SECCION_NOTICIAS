@@ -20,9 +20,5 @@ def publicar_noticia(noticia, fecha):
 
 
 def filtrar_publicadas(noticias):
-    resultado = []
-    for noticia in noticias:
-        if noticia['estado'] == 'PUBLICADA':
-            resultado.append(noticia)
-    resultado.sort(key=lambda n: n['fecha_publicacion'], reverse=True)
-    return resultado
+    publicadas = [n for n in noticias if n['estado'] == PUBLICADA]
+    return sorted(publicadas, key=lambda n: n['fecha_publicacion'], reverse=True)
