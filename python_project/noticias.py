@@ -16,3 +16,13 @@ def publicar_noticia(noticia, fecha):
     if noticia['estado'] != BORRADOR:
         raise ValueError('Solo se pueden publicar borradores')
     return {**noticia, 'estado': PUBLICADA, 'fecha_publicacion': fecha}
+
+
+
+def filtrar_publicadas(noticias):
+    resultado = []
+    for noticia in noticias:
+        if noticia['estado'] == 'PUBLICADA':
+            resultado.append(noticia)
+    resultado.sort(key=lambda n: n['fecha_publicacion'], reverse=True)
+    return resultado
