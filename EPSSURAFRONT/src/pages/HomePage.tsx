@@ -55,26 +55,20 @@ const AFFIL_CARDS = [
   },
 ]
 
-// ─── SVG Illustrations (purple/lavender style) ────────────────────────────────
 function DoctorConsultSVG() {
   return (
     <svg viewBox="0 0 140 130" className="w-32 h-28 mx-auto">
-      {/* Desk */}
       <rect x="20" y="90" width="100" height="6" rx="2" fill="#c4b5fd" />
       <rect x="30" y="96" width="8" height="20" rx="2" fill="#a78bfa" />
       <rect x="102" y="96" width="8" height="20" rx="2" fill="#a78bfa" />
-      {/* Doctor */}
       <circle cx="95" cy="40" r="14" fill="#ddd6fe" />
       <rect x="82" y="54" width="26" height="36" rx="5" fill="#a78bfa" />
       <rect x="74" y="62" width="10" height="24" rx="4" fill="#c4b5fd" />
       <rect x="108" y="62" width="10" height="24" rx="4" fill="#c4b5fd" />
-      {/* Patient (seated) */}
       <circle cx="42" cy="50" r="12" fill="#ddd6fe" />
       <rect x="31" y="62" width="22" height="28" rx="4" fill="#c4b5fd" />
-      {/* Monitor */}
       <rect x="58" y="55" width="24" height="18" rx="3" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1.5" />
       <rect x="67" y="73" width="6" height="5" rx="1" fill="#a78bfa" />
-      {/* Stethoscope */}
       <path d="M94 54 Q88 65 88 75" stroke="#7c3aed" strokeWidth="2" fill="none" strokeLinecap="round" />
       <circle cx="88" cy="77" r="3" fill="#7c3aed" />
     </svg>
@@ -84,23 +78,18 @@ function DoctorConsultSVG() {
 function MedicineSVG() {
   return (
     <svg viewBox="0 0 140 130" className="w-32 h-28 mx-auto">
-      {/* Shelf/surface */}
       <rect x="15" y="100" width="110" height="5" rx="2" fill="#c4b5fd" />
-      {/* Large bottle */}
       <rect x="30" y="55" width="22" height="45" rx="4" fill="#ddd6fe" stroke="#a78bfa" strokeWidth="1.5" />
       <rect x="34" y="48" width="14" height="10" rx="2" fill="#a78bfa" />
       <rect x="36" y="68" width="10" height="2" rx="1" fill="#a78bfa" />
       <rect x="36" y="73" width="10" height="2" rx="1" fill="#a78bfa" />
       <rect x="36" y="78" width="10" height="2" rx="1" fill="#a78bfa" />
-      {/* Medium bottle */}
       <rect x="60" y="63" width="18" height="37" rx="4" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1.5" />
       <rect x="63" y="57" width="12" height="8" rx="2" fill="#c4b5fd" />
-      {/* Pills scattered */}
       <ellipse cx="95" cy="85" rx="10" ry="5" fill="#ddd6fe" stroke="#a78bfa" strokeWidth="1" />
       <line x1="95" y1="80" x2="95" y2="90" stroke="#a78bfa" strokeWidth="1.5" />
       <ellipse cx="100" cy="73" rx="8" ry="4" fill="#c4b5fd" stroke="#a78bfa" strokeWidth="1" transform="rotate(-20 100 73)" />
       <line x1="97" y1="70" x2="103" y2="76" stroke="#a78bfa" strokeWidth="1.5" />
-      {/* Small box */}
       <rect x="88" y="83" width="20" height="15" rx="2" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1.5" />
       <path d="M92 90 L96 90 M94 87 L94 93" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
@@ -110,37 +99,28 @@ function MedicineSVG() {
 function IPSDoctorSVG() {
   return (
     <svg viewBox="0 0 140 130" className="w-32 h-28 mx-auto">
-      {/* Background lines (venetian blind / building) */}
       {[0, 1, 2, 3, 4, 5, 6].map(i => (
         <line key={i} x1={90 + i * 6} y1="20" x2={90 + i * 6} y2="110" stroke="#ede9fe" strokeWidth="4" />
       ))}
-      {/* Doctor figure */}
       <circle cx="55" cy="38" r="16" fill="#ddd6fe" />
-      {/* White coat */}
       <rect x="38" y="54" width="34" height="50" rx="5" fill="#ede9fe" stroke="#c4b5fd" strokeWidth="1.5" />
-      {/* Coat lapels */}
       <path d="M55 54 L48 70" stroke="#c4b5fd" strokeWidth="1.5" />
       <path d="M55 54 L62 70" stroke="#c4b5fd" strokeWidth="1.5" />
-      {/* Arms */}
       <rect x="25" y="60" width="13" height="30" rx="5" fill="#ddd6fe" />
       <rect x="72" y="60" width="13" height="30" rx="5" fill="#ddd6fe" />
-      {/* Clipboard in right hand */}
       <rect x="72" y="75" width="16" height="20" rx="2" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1.5" />
       <rect x="76" y="72" width="8" height="4" rx="1" fill="#a78bfa" />
       <line x1="75" y1="82" x2="85" y2="82" stroke="#c4b5fd" strokeWidth="1" />
       <line x1="75" y1="86" x2="85" y2="86" stroke="#c4b5fd" strokeWidth="1" />
       <line x1="75" y1="90" x2="82" y2="90" stroke="#c4b5fd" strokeWidth="1" />
-      {/* Stethoscope */}
       <path d="M50 54 Q44 68 44 78" stroke="#a78bfa" strokeWidth="2" fill="none" strokeLinecap="round" />
       <circle cx="44" cy="80" r="4" fill="#a78bfa" />
-      {/* Legs */}
       <rect x="43" y="104" width="10" height="20" rx="3" fill="#ddd6fe" />
       <rect x="57" y="104" width="10" height="20" rx="3" fill="#ddd6fe" />
     </svg>
   )
 }
 
-// ─── Educational Card ─────────────────────────────────────────────────────────
 function EduCard({ card }: { card: typeof EDU_CARDS[0] }) {
   return (
     <div className="flex-1 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col" style={{ border: '1px solid #e5e7eb' }}>
@@ -160,15 +140,12 @@ function EduCard({ card }: { card: typeof EDU_CARDS[0] }) {
   )
 }
 
-// ─── Home page ────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(2)
 
   return (
     <>
-      {/* HERO SLIDER */}
       <section className="relative overflow-hidden" style={{ background: '#3a3a3a', height: 430 }}>
-        {/* Background image */}
         <div className="absolute inset-0 transition-all duration-700">
           <img
             src={SLIDES[activeSlide].img}
@@ -178,7 +155,6 @@ export default function HomePage() {
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.1) 100%)' }} />
         </div>
 
-        {/* Prev arrow */}
         <button
           onClick={() => setActiveSlide(s => (s - 1 + SLIDES.length) % SLIDES.length)}
           className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white z-10 text-5xl font-thin leading-none transition-colors"
@@ -186,7 +162,6 @@ export default function HomePage() {
           ‹
         </button>
 
-        {/* Next arrow */}
         <button
           onClick={() => setActiveSlide(s => (s + 1) % SLIDES.length)}
           className="absolute right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white z-10 text-5xl font-thin leading-none transition-colors"
@@ -194,7 +169,6 @@ export default function HomePage() {
           ›
         </button>
 
-        {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-20 max-w-2xl">
           <h1 className="text-white text-[32px] font-bold leading-tight mb-8">
             {SLIDES[activeSlide].headline}
@@ -204,7 +178,6 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* Slide dots */}
         <div className="absolute bottom-7 left-20 flex items-center gap-2.5 z-10">
           {SLIDES.map((_, i) => (
             <button
@@ -220,7 +193,6 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Accessibility icon */}
         <div className="absolute right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center z-10" style={{ background: '#1d6dbf' }}>
           <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2a2 2 0 110 4 2 2 0 010-4zm-1 5a1 1 0 00-1 1v4a1 1 0 00.553.894l2 1A1 1 0 0014 13v-4a1 1 0 00-1-1h-2zm0 8l-1 5h2l.5-2.5.5 2.5h2l-1-5H11z" />
@@ -228,7 +200,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* QUICK LINKS BAR */}
       <section className="border-b border-gray-200 py-3 bg-white">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="flex items-center gap-1 mb-2.5">
@@ -257,9 +228,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* EDUCATIONAL PLATFORM */}
       <section className="flex">
-        {/* Green panel */}
         <div className="shrink-0 flex flex-col justify-center px-10 py-14" style={{ width: 280, background: '#dff0d8' }}>
           <div className="w-8 h-0.5 mb-5" style={{ background: '#06b6d4' }} />
           <h2 className="text-[#1e3a2f] text-3xl font-bold leading-snug mb-5">
@@ -270,7 +239,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* 3 cards */}
         <div className="flex-1 flex gap-4 p-6 bg-white items-stretch">
           {EDU_CARDS.map((card, i) => (
             <EduCard key={i} card={card} />
@@ -278,10 +246,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
       <section className="py-14 bg-white">
         <div className="max-w-screen-xl mx-auto px-8 flex gap-10 items-center">
-          {/* Left text */}
           <div className="shrink-0" style={{ width: 240 }}>
             <div className="w-8 h-0.5 mb-4" style={{ background: '#06b6d4' }} />
             <h2 className="text-gray-900 text-3xl font-bold leading-snug mb-4">Servicios a un clic</h2>
@@ -293,7 +259,6 @@ export default function HomePage() {
             </button>
           </div>
 
-          {/* 3 service cards */}
           <div className="flex-1 flex gap-4">
             {[
               { title: 'Citas médicas', Svg: DoctorConsultSVG },
@@ -314,9 +279,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AFFILIATIONS SECTION */}
       <section className="flex min-h-[380px]" style={{ background: '#fef9dc' }}>
-        {/* Left content */}
         <div className="flex-1 px-14 py-12">
           <h2 className="text-gray-900 text-2xl font-bold text-center mb-2">Todo sobre afiliaciones</h2>
           <div className="w-8 h-0.5 mx-auto mb-8" style={{ background: '#06b6d4' }} />
@@ -340,7 +303,6 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* Right doctor image */}
         <div className="shrink-0 relative overflow-hidden" style={{ width: 340 }}>
           <img
             src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=700"
@@ -348,7 +310,6 @@ export default function HomePage() {
             className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.48)' }} />
-          {/* Yellow blob decoration */}
           <div className="absolute top-1/4 right-4 w-32 h-32 rounded-full opacity-25" style={{ background: '#d4b400' }} />
           <div className="absolute bottom-0 inset-x-0 p-7 text-white z-10">
             <p className="font-bold text-base mb-2 leading-snug">Si te trasladaron a EPS SURA</p>
@@ -360,7 +321,6 @@ export default function HomePage() {
   )
 }
 
-// ─── Tiny icon components ─────────────────────────────────────────────────────
 function CircleIcon() {
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2}>

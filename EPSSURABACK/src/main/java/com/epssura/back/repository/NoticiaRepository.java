@@ -12,8 +12,6 @@ import com.epssura.back.model.Noticia;
 
 public interface NoticiaRepository extends JpaRepository<Noticia, Long> {
 
-    // Listado por estado, con filtro opcional por categoria y busqueda en titulo y resumen.
-    // "patron" llega ya en minusculas y con comodines, por ejemplo "%sede%" (o "%" para no filtrar).
     @Query("""
             select distinct n from Noticia n
             left join n.categorias c

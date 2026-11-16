@@ -1,5 +1,3 @@
--- Datos de ejemplo. Los id los genera la base de datos en el orden de insercion (1, 2, 3...).
-
 INSERT INTO usuario (nombre, correo, rol) VALUES
   ('Administrador EPS SURA', 'admin@epssura.com', 'ADMIN'),
   ('Laura Gómez', 'laura.gomez@epssura.com', 'EDITOR'),

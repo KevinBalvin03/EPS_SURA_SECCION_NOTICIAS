@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 
-// Secciones que todavía no tienen página propia.
 const PENDING_SECTIONS = ['AFILIADOS', 'EMPLEADORES', 'INDEPENDIENTES', 'ASESORES COMERCIALES', 'PRESTADORES DE SERVICIO', 'PAC']
 
 const itemBase = 'px-4 py-2.5 text-[11px] font-semibold tracking-widest whitespace-nowrap transition-all border-b-2'

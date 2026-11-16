@@ -3,19 +3,15 @@ import epsSuraLogo from '@/assets/logo-eps-sura.png'
 export default function Footer() {
   return (
     <>
-      {/* FOOTER */}
       <footer className="bg-white pt-10 pb-12 border-t border-gray-200">
         <div className="max-w-screen-xl mx-auto px-8">
-          {/* Logo */}
           <div className="mb-6">
             <img src={epsSuraLogo} alt="EPS Sura" className="h-10 w-auto object-contain" />
           </div>
           <hr className="border-gray-200 mb-8" />
 
-          {/* 3-column grid */}
           <div className="grid grid-cols-3 gap-10">
 
-            {/* Col 1 — Sobre nosotros */}
             <div>
               <h4 className="text-[12px] font-black text-gray-900 tracking-wide mb-4 uppercase">Sobre nosotros</h4>
               <ul className="space-y-2">
@@ -32,7 +28,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Col 2 — Servicios al usuario */}
             <div>
               <h4 className="text-[12px] font-black text-gray-900 tracking-wide mb-4 uppercase">Servicios al usuario</h4>
               <ul className="space-y-2 mb-6">
@@ -54,7 +49,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Col 3 — Líneas de atención + Consulta */}
             <div>
               <h4 className="text-[12px] font-black text-gray-900 tracking-wide mb-4 uppercase">Líneas de atención</h4>
               <ul className="space-y-2 mb-6 text-[13px] text-gray-700">
@@ -84,7 +78,6 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* FLOATING CONTACT BUTTON */}
       <div className="fixed bottom-6 right-6 z-50">
         <button
           className="text-white rounded-full shadow-xl hover:scale-105 transition-transform flex flex-col items-center justify-center text-center text-[11px] font-bold leading-tight"

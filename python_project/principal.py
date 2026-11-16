@@ -2,7 +2,7 @@ from modulo_financiero import (calcular_van, calcular_tir_biseccion,
                                tasa_anual_a_mensual, dictamen_final)
 
 I0 = 39_375_000
-r = 0.0095  # 12% efectivo anual (equivalente mensual)
+r = 0.0095
 flujos_caja = [800_000, 1_000_000, 1_300_000, 1_500_000, 1_500_000, 1_500_000,
                1_500_000, 1_500_000, 1_500_000, 1_500_000, 1_500_000, 1_500_000]
 

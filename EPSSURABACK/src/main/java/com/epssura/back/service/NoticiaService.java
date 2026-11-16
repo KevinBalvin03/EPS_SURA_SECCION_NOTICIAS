@@ -37,14 +37,12 @@ public class NoticiaService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    // Listado publico: solo PUBLICADAS, de la mas reciente a la mas antigua.
     @Transactional(readOnly = true)
     public List<Noticia> listarPublicadas(Long categoriaId, String q) {
         String patron = (q == null || q.isBlank()) ? "%" : "%" + q.trim().toLowerCase() + "%";
         return noticiaRepository.buscar(EstadoNoticia.PUBLICADA, categoriaId, patron);
     }
 
-    // Listado de administracion: todas, sin importar el estado.
     @Transactional(readOnly = true)
     public List<Noticia> listarTodas() {
         return noticiaRepository.findAllByOrderByFechaCreacionDesc();
@@ -61,7 +59,6 @@ public class NoticiaService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Noticia no encontrada"));
     }
 
-    // Toda noticia nueva nace como BORRADOR.
     public Noticia crear(NoticiaRequest datos) {
         Noticia noticia = new Noticia();
         aplicar(noticia, datos);

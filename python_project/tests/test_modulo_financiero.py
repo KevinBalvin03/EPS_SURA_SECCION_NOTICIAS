@@ -1,4 +1,3 @@
-#AQUI VAN LAS PRUEBAS DEL MODULO FINANCIERO 
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -7,8 +6,8 @@ import unittest
 
 try:
     from modulo_financiero import (calcular_van, calcular_tir_biseccion,
-                               tasa_anual_a_mensual, evaluar_van,
-                               evaluar_tir, dictamen_final)
+                                   tasa_anual_a_mensual, evaluar_van,
+                                   evaluar_tir, dictamen_final)
 except ImportError:
     calcular_van = None
 
