@@ -46,3 +46,18 @@ jobs:
         with:
           name: front-dist
           path: EPSSURAFRONT/dist
+
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: self-hosted
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: front-dist
+          path: dist
+      - name: Publicar en Apache
+        run: |
+          rm -rf /var/www/html/*
+          cp -r dist/* /var/www/html/
